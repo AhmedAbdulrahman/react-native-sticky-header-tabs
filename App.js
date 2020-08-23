@@ -26,7 +26,7 @@ function HomeScreen() {
         ItemSeparatorComponent={() => <View style={styles.separator} />}
         renderTab={({ title, backgroundImage, index, isActive }) => (
           <View
-            key={title + '-' + index}
+            key={`${title}-${index}`}
             style={[
               styles.tabContainer,
               { borderBottomWidth: isActive ? 2 : 0 }
@@ -50,14 +50,14 @@ function HomeScreen() {
           </View>
         )}
         renderSectionHeader={({ section }) => (
-          <View key={section.title + '-' + section.index}>
+          <View key={`${section.title}-${section.index}`}>
             <View style={styles.sectionHeaderContainer} />
             <Text style={styles.sectionHeaderText}>{section.title}</Text>
           </View>
         )}
         renderItem={({ item, index }) => (
           <>
-            <View style={styles.itemContainer} key={item.title + '-' + index}>
+            <View style={styles.itemContainer} key={`${item.title}-${index}`}>
               <View style={styles.content}>
                 <Text style={styles.itemTitle}>{item.title}</Text>
                 <Text style={styles.itemDescription}>{item.description}</Text>
